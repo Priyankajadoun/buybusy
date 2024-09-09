@@ -1,0 +1,116 @@
+.cartPage{
+    margin: auto;
+}
+.totalPrice{
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+    left: .5rem;
+    margin-right: 2rem;
+    padding: 1.5rem;
+    position: fixed;
+    top: 30%;
+}
+.totalPrice p{
+    color: #224957;
+    font-size: 1.15em;
+    font-weight: 700;
+}
+.cartBtn {    
+    background: #7064e5;
+    border: 1px solid #7064e5;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    margin: auto;
+    transition: all .3s ease-in-out;
+}
+.ProductGrid{
+    grid-gap: 2rem;
+    width: 65%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 3rem 15rem;
+}
+.productContainer{
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(64, 77, 148, .4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    transition: all .25s ease-in-out;
+}
+.productImage{
+    flex: 1 1;
+}
+.productImage img{
+    object-fit: contain;
+}
+.productDetails{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.productName p{
+    margin: 0;
+}
+.productOption {
+    align-items: center;
+    display: flex;
+    font-size: 24px;
+    justify-content: space-between;
+    padding: 8px 0;
+    width: 100%;
+}
+.productOption_Price{
+    color: #224957;
+    font-weight: 700;
+    margin: 0;
+}
+.productName {
+    color: #224957;
+    font-family: Inter, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 8px 0;
+    
+}
+.productQuantity{
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 50%; */
+}
+.productQuantity img:hover{
+    /* transition: all .1s ease-in-out; */
+    cursor: pointer;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
+.ProductDetails_removeBtn {
+    background: #f14444;
+    border: 1px solid red;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 20px;
+    padding: .75rem 0;
+    transition: all .3s ease-in-out;
+    width: 50%;
+    width: 100%; 
+}
+
+.ProductDetails_removeBtn:hover{
+    background-color: initial;
+    border: 1px solid #f14444;
+    color: #f14444;
+    cursor: pointer;
+}
