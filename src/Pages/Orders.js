@@ -1,17 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "../Styles/Orders.css";
 import { useProdValue } from '../productContext';
-// import { Spinner } from 'react-spinner-material';
 import Spinner from 'react-spinner-material';
 
-
-
 function Orders() {
-    const {orders,loading} = useProdValue();
-    useEffect(() => {
-        console.log('Orders:', orders); // Add this line
-    }, [orders]);
-
+    const {orders, loading} = useProdValue();
 
     if (loading) {
         return (
@@ -20,39 +13,40 @@ function Orders() {
             </div>
         );
     }
-    return (
 
+    return (
         <div className='OrdersPage'>
             <h1>Your Orders</h1>
             {[...orders].reverse().map(order => (
+                // ... rest of the component code remains unchanged
                 <div key={order.id} className='order'>
-                    <div className='orderOn'>
-                        <h2>Ordered On: {order.date}</h2>
-                    </div>
-                    <table className='orderTable'>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Total Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {order.items.map(item => (
-                                <tr key={item.id}>
-                                    <td>{item.name}</td>
-                                    <td>₹ {item.price}</td>
-                                    <td>{item.qty}</td>
-                                    <td>₹ {item.price * item.qty}</td>
-                                </tr>
-                            ))}
-                            <tr className='orderTable_totalPrice'>
-                                <td>₹ {order.total}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div className='orderOn'>
+                    <h2>Ordered On: {order.date}</h2>
                 </div>
+                <table className='orderTable'>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {order.items.map(item => (
+                            <tr key={item.id}>
+                                <td>{item.name}</td>
+                                <td>₹ {item.price}</td>
+                                <td>{item.qty}</td>
+                                <td>₹ {item.price * item.qty}</td>
+                            </tr>
+                        ))}
+                        <tr className='orderTable_totalPrice'>
+                            <td>₹ {order.total}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             ))}
         </div>
     )
